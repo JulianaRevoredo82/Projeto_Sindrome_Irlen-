@@ -1,0 +1,119 @@
+﻿
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Painel Administrativo </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        .navbar {
+            width: 1000px;
+            height: 48px;
+            margin-top: 2px;
+            position: absolute;
+            background-color: #e3f2fd;
+            
+            border-radius: 0px 0px 25px 25px;
+        }
+
+        body {
+            background-color: #e3f2fd;
+            
+        }
+
+        h2 {
+            font: 300px;
+            color: midnightblue;
+            margin-top: -6px;
+            border-bottom: 0px solid White;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-primary">
+        <li>
+            <div class="col-lg-12">
+                <h2>Painel de Administrador</h2>
+            </div>
+        </li>
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Profissional
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="Cadastro Profissional">
+                            <p>
+                                <div>
+                                    <a class="dropdown-item" href="http://localhost:57647/Profissionais/Index">Especialistas</a>
+                                </div>
+                            </p>
+                            <p>
+                                <div>
+                                    <a class="dropdown-item" href="http://localhost:57647/Screnners">Screnner</a>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Portador Depoimento
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="Cadastro Portador">
+                            <p>
+                                <div>
+                                    <a class="dropdown-item" href="http://localhost:57647/DepoimentoVideos">Video</a>
+                                </div>
+                            </p>
+                            <p>
+                                <div>
+                                    <a class="dropdown-item" href="http://localhost:57647/DepoimentoLeituras">Leitura</a>
+                                </div>
+                            </p>
+                            <p>
+                                <div>
+                                    <a class="dropdown-item" href="http://localhost:57647/DepoimentoLeituras">Tipo Depoimento</a>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Site
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="Categoria">
+                            <p>
+                                <div>
+                                    <a class="dropdown-item" href="http://localhost:57647/DepoimentoVideos">QuemSomos</a>
+                                </div>
+                            </p>
+
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            </div>
+    </nav>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</body>
+</html>

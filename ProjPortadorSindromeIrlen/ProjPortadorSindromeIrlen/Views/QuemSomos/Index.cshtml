@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ProjPortadorSindromeIrlen.QuemSomos>
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Adicionar", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Historia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Objetivos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valores)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Foto)
+
+
+        </th>
+
+        <th>
+            Imagem
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Historia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Objetivos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valores)
+        </td>
+        <td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Foto)
+        </td>
+
+        @*<div class="Display-field">
+
+            <img src="@Url.Content(item.Foto)" alt="@item.Foto" />
+        </div>*@
+        </td>
+
+
+
+
+
+        <td>
+
+
+
+
+
+
+
+        <td>
+            @Html.ActionLink("Alterar", "Edit", new { id = item.IdQuemSomos }) |
+            @Html.ActionLink("Detalhes", "Details", new { id = item.IdQuemSomos }) |
+            @Html.ActionLink("Deletar", "Delete", new { id = item.IdQuemSomos })
+        </td>
+
+    </tr>
+
+    }
+</table>
+
+
+

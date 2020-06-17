@@ -1,0 +1,90 @@
+﻿@model IEnumerable<ProjPortadorSindromeIrlen.Screnner>
+@{
+    ViewBag.Title = "Screnner";
+}
+
+
+    <h2> Screener Síndrome de Írlen</h2>
+
+
+
+<head>
+    <style>
+        body {
+            background-color: #e3f2fd;
+        }
+
+        h4 {
+            color: midnightblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        h3 {
+            color: midnightblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+
+        h2 {
+            color: midnightblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body background-color="red">
+
+
+    <div class="container">
+
+        <div class="col-md-4">
+
+            <div class="container">
+                @foreach (var item in Model)
+
+                {
+                    <tr>
+                        <td>
+                            <H4>
+                                Profissional:  @Html.DisplayFor(modelItem => item.Nome)
+                            </H4>
+                        </td>
+
+                        <td>
+                            <div class="Display-field">
+                                <div class="text-center">
+                                    <iframe width="560" height="315" src=@Url.Content(item.Video) frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Titulo)
+                        </td>
+
+                        <td>
+                            <H4> @Html.DisplayFor(modelItem => item.CategoriaProfissionais.Categoria) </H4>
+                        </td>
+                        <td>
+                            <H4>
+                                @Html.DisplayFor(modelItem => item.Cidade1.Cidade1)
+
+                                - Taquaritinga - São Paulo Capital /
+
+                                @Html.DisplayFor(modelItem => item.Estado1.Estado1)
+                            </H4>
+                        </td>
+
+
+                    </tr>
+                }
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</body>

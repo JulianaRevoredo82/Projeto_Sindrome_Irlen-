@@ -1,0 +1,95 @@
+﻿@model IEnumerable<ProjPortadorSindromeIrlen.Profissionais>
+
+@{
+    ViewBag.Title = "Profissionais";
+}
+
+<h2>Especialista na Sindrome de Irlen</h2>
+
+
+<head>
+    <style>
+        body {
+            background-color: #e3f2fd;
+        }
+
+        h5 {
+            color: midnightblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        h4 {
+            color: midnightblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        h1 {
+            color: midnightblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        h3 {
+            color: midnightblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        h2 {
+            color: midnightblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body background-color="red">
+    <div class="container">
+        <div class="col-md-4">
+            <div class="container">
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <p>
+                        <td>
+                            <H3>Profissional: @Html.DisplayFor(modelItem => item.Nome) </H3>
+                        </td>
+                        </p>
+
+                        <td>
+                            <H5>  @Html.DisplayFor(modelItem => item.Titulo)</H5>
+                        </td>
+
+                        <td>
+                            <div class="Display-field">
+                                <div class="text-center">
+                                    <iframe width="560" height="315" src=@Url.Content(item.Video) frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </td>
+
+                        <H4>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CategoriaProfissionais.Categoria)
+                            </td>
+                        </H4>
+
+                        <H4>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cidade1.Cidade1)
+
+                                @Html.DisplayFor(modelItem => item.Estado1.Estado1)
+                            </td>
+                        </H4>
+                    </tr>
+
+                }
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</body>

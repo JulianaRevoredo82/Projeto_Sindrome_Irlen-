@@ -1,0 +1,66 @@
+﻿@model ProjPortadorSindromeIrlen.Screnner
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Screnner</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Video)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Video)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoriaProfissionais.Categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoriaProfissionais.Categoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade1.Cidade1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade1.Cidade1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado1.Estado1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado1.Estado1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdScrenner }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

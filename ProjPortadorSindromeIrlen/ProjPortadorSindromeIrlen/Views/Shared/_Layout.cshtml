@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Viva Agora</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        .navbar {
+            width: 960px;
+            height: 48px;
+            margin-top: -6px;
+            position: relative;
+            background-color: midnightblue;
+            border-radius: 0px 0px 15px 15px;
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span  class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*@Html.ActionLink("Vida", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+            </div>
+            <div class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav">
+
+                    <li> <img src="~/img/perfil.jpg" width="70" height="70" alt=""></li>
+                    <li>@Html.ActionLink(" Início", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Leia Depoimentos", "LeiaDepoimentos", "DepoimentoLeituras")</li>
+                    <li>@Html.ActionLink(" Quem Somos ", "QuemSomosSite", "QuemSomos")</li>
+                    <li>@Html.ActionLink("Screnner", "Screnner", "Screnners")</li>
+                    <li>@Html.ActionLink("ADMIN", "Index", "Home", new { area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Depoimento Portador Video", "DepoimentoVideo", "DepoimentoVideos")</li>
+                    <li>@Html.ActionLink("Profissionais", "Profissionais", "Profissionais")</li>
+                    <li>@Html.ActionLink("Painel Controle", "PainelAdministrativo", "Home")</li>
+                    <li><a href="#Suporte">Suporte</a></li>
+                    
+                </ul>
+
+                <div align="right">
+
+                    @Html.Partial("_LoginPartial")
+                   
+                </div>
+
+            </div>
+        </div>
+       
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+
+            <footer align="center">
+                <div class="well">
+                    <section id="Suporte" aling="center">
+
+                        <div>
+
+                            <img src="~/img/simbolo-telefone.jpg" width="30px">
+                            <a href="Tel:9999999999">(16)99628-0498</a> <a> / </a>
+                            <img src="~/img/email.png" width="30px">
+                            <a href="mailto:julyaprev@hotmail.com">julyaprev@hotmail.com</a>
+                            <img src="~/img/facebook.jpeg" width="30px">
+                            <a href="https://www.facebook.com/portadorsindromedeirlen">Curta nossa página no Facebook</a>
+
+                        </div>
+
+                    </section>
+
+                    <p>&copy; @DateTime.Now.Year - Desenvolvido por: Juliana A Revoredo </p>
+                </div>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+</body>
+</html>

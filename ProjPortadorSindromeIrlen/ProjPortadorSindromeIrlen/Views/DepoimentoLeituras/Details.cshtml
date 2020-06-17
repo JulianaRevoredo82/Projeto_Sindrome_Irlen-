@@ -1,0 +1,74 @@
+﻿@model ProjPortadorSindromeIrlen.DepoimentoLeitura
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DepoimentoLeitura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Idade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Idade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Historia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Historia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade1.Cidade1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade1.Cidade1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado1.Estado1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado1.Estado1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDepoimento.Tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDepoimento.Tipo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdDepEscrito }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

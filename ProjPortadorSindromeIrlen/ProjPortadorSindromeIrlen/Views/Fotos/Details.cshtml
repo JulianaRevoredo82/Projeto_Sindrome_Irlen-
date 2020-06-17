@@ -1,0 +1,26 @@
+﻿@model ProjPortadorSindromeIrlen.Fotos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Fotos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fotos1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fotos1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdFotos }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

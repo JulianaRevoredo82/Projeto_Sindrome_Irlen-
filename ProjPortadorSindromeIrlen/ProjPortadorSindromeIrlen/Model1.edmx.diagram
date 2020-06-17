@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a131ad524fda4ff59f47cebbcc2f4598" Name="Diagram1">
+        <EntityTypeShape EntityType="SindromeIrlenModel.Adm" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SindromeIrlenModel.CategoriaProfissionais" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SindromeIrlenModel.Cidade" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="SindromeIrlenModel.DepoimentoLeitura" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SindromeIrlenModel.DepoimentoVideo" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SindromeIrlenModel.Estado" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SindromeIrlenModel.Fotos" Width="1.5" PointX="8.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SindromeIrlenModel.Parceiros" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SindromeIrlenModel.Profissionais" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SindromeIrlenModel.QuemSomos" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SindromeIrlenModel.Screnner" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SindromeIrlenModel.TipoDepoimento" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SindromeIrlenModel.Usuario" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="SindromeIrlenModel.FK_Profissionais_CategoriaProfissionais" ManuallyRouted="false" />
+        <AssociationConnector Association="SindromeIrlenModel.FK_Screnner_CategoriaProfissionais" ManuallyRouted="false" />
+        <AssociationConnector Association="SindromeIrlenModel.FK_Cidade_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="SindromeIrlenModel.FK_DepoimentoLeitura_Cidade" ManuallyRouted="false" />
+        <AssociationConnector Association="SindromeIrlenModel.FK_Fotos_Cidade" ManuallyRouted="false" />
+        <AssociationConnector Association="SindromeIrlenModel.FK_Profissionais_Cidade" ManuallyRouted="false" />
+        <AssociationConnector Association="SindromeIrlenModel.FK_Screnner_Cidade" ManuallyRouted="false" />
+        <AssociationConnector Association="SindromeIrlenModel.FK_DepoimentoLeitura_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="SindromeIrlenModel.FK_DepoimentoLeitura_TipoDepoimento" ManuallyRouted="false" />
+        <AssociationConnector Association="SindromeIrlenModel.FK_DepoimentoVideo_TipoDepoimento" ManuallyRouted="false" />
+        <AssociationConnector Association="SindromeIrlenModel.FK_Fotos_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="SindromeIrlenModel.FK_Profissionais_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="SindromeIrlenModel.FK_Screnner_Estado" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

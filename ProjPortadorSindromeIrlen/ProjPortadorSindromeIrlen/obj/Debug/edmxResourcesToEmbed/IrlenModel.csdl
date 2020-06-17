@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SindromeIrlenModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CategoriaProfissionais">
+    <Key>
+      <PropertyRef Name="IdCategoriaProfissionais" />
+    </Key>
+    <Property Name="IdCategoriaProfissionais" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Categoria" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Profissionais" Relationship="Self.FK_Profissionais_Profissionais" FromRole="CategoriaProfissionais" ToRole="Profissionais" />
+  </EntityType>
+  <EntityType Name="Cidade">
+    <Key>
+      <PropertyRef Name="IdCidade" />
+    </Key>
+    <Property Name="IdCidade" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cidade1" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Estado1" Relationship="Self.FK_Cidade_Estado" FromRole="Cidade" ToRole="Estado" />
+    <NavigationProperty Name="DepoimentoLeitura" Relationship="Self.FK_DepoimentoLeitura_Cidade" FromRole="Cidade" ToRole="DepoimentoLeitura" />
+    <NavigationProperty Name="DepoimentoVideo" Relationship="Self.FK_DepoimentoVideo_Cidade" FromRole="Cidade" ToRole="DepoimentoVideo" />
+    <NavigationProperty Name="Profissionais" Relationship="Self.FK_Profissionais_Cidade" FromRole="Cidade" ToRole="Profissionais" />
+  </EntityType>
+  <EntityType Name="DepoimentoLeitura">
+    <Key>
+      <PropertyRef Name="IdDepEscrito" />
+    </Key>
+    <Property Name="IdDepEscrito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tipo" Type="Int32" Nullable="false" />
+    <Property Name="Idade" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cidade" Type="Int32" Nullable="false" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+    <Property Name="Titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Historia" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cidade1" Relationship="Self.FK_DepoimentoLeitura_Cidade" FromRole="DepoimentoLeitura" ToRole="Cidade" />
+    <NavigationProperty Name="Estado1" Relationship="Self.FK_DepoimentoLeitura_Estado" FromRole="DepoimentoLeitura" ToRole="Estado" />
+    <NavigationProperty Name="TipoDepoimento" Relationship="Self.FK_DepoimentoLeitura_TipoDepoimento" FromRole="DepoimentoLeitura" ToRole="TipoDepoimento" />
+  </EntityType>
+  <EntityType Name="DepoimentoVideo">
+    <Key>
+      <PropertyRef Name="IdDepVideo" />
+    </Key>
+    <Property Name="IdDepVideo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tipo" Type="Int32" Nullable="false" />
+    <Property Name="Idade" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+    <Property Name="Cidade" Type="Int32" Nullable="false" />
+    <Property Name="Titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Video" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cidade1" Relationship="Self.FK_DepoimentoVideo_Cidade" FromRole="DepoimentoVideo" ToRole="Cidade" />
+    <NavigationProperty Name="Estado1" Relationship="Self.FK_DepoimentoVideo_Estado" FromRole="DepoimentoVideo" ToRole="Estado" />
+    <NavigationProperty Name="TipoDepoimento" Relationship="Self.FK_DepoimentoVideo_TipoDepoimento" FromRole="DepoimentoVideo" ToRole="TipoDepoimento" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Estado1" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cidade" Relationship="Self.FK_Cidade_Estado" FromRole="Estado" ToRole="Cidade" />
+    <NavigationProperty Name="DepoimentoLeitura" Relationship="Self.FK_DepoimentoLeitura_Estado" FromRole="Estado" ToRole="DepoimentoLeitura" />
+    <NavigationProperty Name="DepoimentoVideo" Relationship="Self.FK_DepoimentoVideo_Estado" FromRole="Estado" ToRole="DepoimentoVideo" />
+    <NavigationProperty Name="Profissionais" Relationship="Self.FK_Profissionais_Estado" FromRole="Estado" ToRole="Profissionais" />
+  </EntityType>
+  <EntityType Name="Fotos">
+    <Key>
+      <PropertyRef Name="IdFotos" />
+    </Key>
+    <Property Name="IdFotos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fotos1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Profissionais">
+    <Key>
+      <PropertyRef Name="IdProfissionais" />
+    </Key>
+    <Property Name="IdProfissionais" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Categoria" Type="Int32" Nullable="false" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+    <Property Name="Cidade" Type="Int32" Nullable="false" />
+    <Property Name="Titulo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Video" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CategoriaProfissionais" Relationship="Self.FK_Profissionais_Profissionais" FromRole="Profissionais" ToRole="CategoriaProfissionais" />
+    <NavigationProperty Name="Cidade1" Relationship="Self.FK_Profissionais_Cidade" FromRole="Profissionais" ToRole="Cidade" />
+    <NavigationProperty Name="Estado1" Relationship="Self.FK_Profissionais_Estado" FromRole="Profissionais" ToRole="Estado" />
+  </EntityType>
+  <EntityType Name="QuemSomos">
+    <Key>
+      <PropertyRef Name="IdQuemSomos" />
+    </Key>
+    <Property Name="IdQuemSomos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Historia" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Objetivos" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Valores" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoDepoimento">
+    <Key>
+      <PropertyRef Name="IdCategDepoimento" />
+    </Key>
+    <Property Name="IdCategDepoimento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DepoimentoLeitura" Relationship="Self.FK_DepoimentoLeitura_TipoDepoimento" FromRole="TipoDepoimento" ToRole="DepoimentoLeitura" />
+    <NavigationProperty Name="DepoimentoVideo" Relationship="Self.FK_DepoimentoVideo_TipoDepoimento" FromRole="TipoDepoimento" ToRole="DepoimentoVideo" />
+  </EntityType>
+  <Association Name="FK_Profissionais_Profissionais">
+    <End Role="CategoriaProfissionais" Type="Self.CategoriaProfissionais" Multiplicity="1" />
+    <End Role="Profissionais" Type="Self.Profissionais" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoriaProfissionais">
+        <PropertyRef Name="IdCategoriaProfissionais" />
+      </Principal>
+      <Dependent Role="Profissionais">
+        <PropertyRef Name="Categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cidade_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="Cidade">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepoimentoLeitura_Cidade">
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="1" />
+    <End Role="DepoimentoLeitura" Type="Self.DepoimentoLeitura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cidade">
+        <PropertyRef Name="IdCidade" />
+      </Principal>
+      <Dependent Role="DepoimentoLeitura">
+        <PropertyRef Name="Cidade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepoimentoVideo_Cidade">
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="1" />
+    <End Role="DepoimentoVideo" Type="Self.DepoimentoVideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cidade">
+        <PropertyRef Name="IdCidade" />
+      </Principal>
+      <Dependent Role="DepoimentoVideo">
+        <PropertyRef Name="Tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Profissionais_Cidade">
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="1" />
+    <End Role="Profissionais" Type="Self.Profissionais" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cidade">
+        <PropertyRef Name="IdCidade" />
+      </Principal>
+      <Dependent Role="Profissionais">
+        <PropertyRef Name="Cidade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepoimentoLeitura_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="DepoimentoLeitura" Type="Self.DepoimentoLeitura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="DepoimentoLeitura">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepoimentoLeitura_TipoDepoimento">
+    <End Role="TipoDepoimento" Type="Self.TipoDepoimento" Multiplicity="1" />
+    <End Role="DepoimentoLeitura" Type="Self.DepoimentoLeitura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDepoimento">
+        <PropertyRef Name="IdCategDepoimento" />
+      </Principal>
+      <Dependent Role="DepoimentoLeitura">
+        <PropertyRef Name="Tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepoimentoVideo_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="DepoimentoVideo" Type="Self.DepoimentoVideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="DepoimentoVideo">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepoimentoVideo_TipoDepoimento">
+    <End Role="TipoDepoimento" Type="Self.TipoDepoimento" Multiplicity="1" />
+    <End Role="DepoimentoVideo" Type="Self.DepoimentoVideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDepoimento">
+        <PropertyRef Name="IdCategDepoimento" />
+      </Principal>
+      <Dependent Role="DepoimentoVideo">
+        <PropertyRef Name="Tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Profissionais_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Profissionais" Type="Self.Profissionais" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="Profissionais">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SindromeIrlenEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CategoriaProfissionais" EntityType="Self.CategoriaProfissionais" />
+    <EntitySet Name="Cidade" EntityType="Self.Cidade" />
+    <EntitySet Name="DepoimentoLeitura" EntityType="Self.DepoimentoLeitura" />
+    <EntitySet Name="DepoimentoVideo" EntityType="Self.DepoimentoVideo" />
+    <EntitySet Name="Estado" EntityType="Self.Estado" />
+    <EntitySet Name="Fotos" EntityType="Self.Fotos" />
+    <EntitySet Name="Profissionais" EntityType="Self.Profissionais" />
+    <EntitySet Name="QuemSomos" EntityType="Self.QuemSomos" />
+    <EntitySet Name="TipoDepoimento" EntityType="Self.TipoDepoimento" />
+    <AssociationSet Name="FK_Profissionais_Profissionais" Association="Self.FK_Profissionais_Profissionais">
+      <End Role="CategoriaProfissionais" EntitySet="CategoriaProfissionais" />
+      <End Role="Profissionais" EntitySet="Profissionais" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cidade_Estado" Association="Self.FK_Cidade_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Cidade" EntitySet="Cidade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepoimentoLeitura_Cidade" Association="Self.FK_DepoimentoLeitura_Cidade">
+      <End Role="Cidade" EntitySet="Cidade" />
+      <End Role="DepoimentoLeitura" EntitySet="DepoimentoLeitura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepoimentoVideo_Cidade" Association="Self.FK_DepoimentoVideo_Cidade">
+      <End Role="Cidade" EntitySet="Cidade" />
+      <End Role="DepoimentoVideo" EntitySet="DepoimentoVideo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Profissionais_Cidade" Association="Self.FK_Profissionais_Cidade">
+      <End Role="Cidade" EntitySet="Cidade" />
+      <End Role="Profissionais" EntitySet="Profissionais" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepoimentoLeitura_Estado" Association="Self.FK_DepoimentoLeitura_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="DepoimentoLeitura" EntitySet="DepoimentoLeitura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepoimentoLeitura_TipoDepoimento" Association="Self.FK_DepoimentoLeitura_TipoDepoimento">
+      <End Role="TipoDepoimento" EntitySet="TipoDepoimento" />
+      <End Role="DepoimentoLeitura" EntitySet="DepoimentoLeitura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepoimentoVideo_Estado" Association="Self.FK_DepoimentoVideo_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="DepoimentoVideo" EntitySet="DepoimentoVideo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepoimentoVideo_TipoDepoimento" Association="Self.FK_DepoimentoVideo_TipoDepoimento">
+      <End Role="TipoDepoimento" EntitySet="TipoDepoimento" />
+      <End Role="DepoimentoVideo" EntitySet="DepoimentoVideo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Profissionais_Estado" Association="Self.FK_Profissionais_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Profissionais" EntitySet="Profissionais" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

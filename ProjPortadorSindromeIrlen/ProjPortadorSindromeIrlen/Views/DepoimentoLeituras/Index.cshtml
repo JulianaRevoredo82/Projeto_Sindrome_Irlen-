@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ProjPortadorSindromeIrlen.DepoimentoLeitura>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Idade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Historia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade1.Cidade1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado1.Estado1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoDepoimento.Tipo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Idade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Historia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade1.Cidade1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado1.Estado1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoDepoimento.Tipo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdDepEscrito }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdDepEscrito }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdDepEscrito })
+        </td>
+    </tr>
+}
+
+</table>

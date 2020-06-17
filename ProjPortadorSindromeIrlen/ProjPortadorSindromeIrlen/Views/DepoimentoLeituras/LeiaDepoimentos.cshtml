@@ -1,0 +1,84 @@
+﻿@model IEnumerable<ProjPortadorSindromeIrlen.DepoimentoLeitura>
+@{
+    ViewBag.Title = "LeiaDepoimentos";
+}
+
+<h2> Cantinho do Depoimento </h2>
+
+<head>
+    <style>
+        body {
+            background-color: #e3f2fd;
+        }
+
+        h4 {
+            color: midnightblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        h3 {
+            color: midnightblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+
+        h2 {
+            color: midnightblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body background-color="red">
+
+    <div class="container">
+
+
+        <div class="col-md-4">
+
+            <div class="container">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <H4>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TipoDepoimento.Tipo)
+                            </td> -
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nome)
+                            <td>
+                                ,
+                                @Html.DisplayFor(modelItem => item.Idade)
+                            </td>Anos,
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cidade1.Cidade1)
+                            </td> -
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Estado1.Estado1)
+                            </td>
+
+                        </H4>
+
+                        <H4>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Titulo)
+                            </td>
+                        </H4>
+                        <td>
+                            <p class="text-justify">
+                                @Html.DisplayFor(modelItem => item.Historia)
+                            </p>
+                        </td>
+
+                    </tr>
+                }
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</body>

@@ -1,0 +1,85 @@
+﻿@model IEnumerable<ProjPortadorSindromeIrlen.DepoimentoVideo>
+@{
+    ViewBag.Title = "DepoimentoVideo";
+}
+
+<h2>Depoimentos e Entrevistas Portadores Video</h2>
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<head>
+    <style>
+        body {
+            background-color: #e3f2fd;
+        }
+
+        h5 {
+            color: midnightblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        h4 {
+            color: midnightblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        h1 {
+            color: midnightblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        h3 {
+            color: midnightblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        h2 {
+            color: midnightblue;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body background-color="red">
+    <div class="container" aling="text-center">
+        <div class="text-justify">
+            <div class="col-md-12">
+
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <span class="border border-primary">
+    <h2>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+    </h2>
+</span>
+
+                    <td>
+                        <div class="Display-field">
+                            <div class="text-center">
+                                <iframe width="560" height="315" src=@Url.Content(item.Video) frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </td>
+                    <h4>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TipoDepoimento.Tipo)
+                        </td>:
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Titulo)
+                        </td>
+                    </h4>
+                </tr>
+                <div>   </div>
+                }
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>

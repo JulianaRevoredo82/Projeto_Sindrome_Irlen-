@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SindromeIrlenModelStoreContainer" CdmEntityContainer="SindromeIrlenEntities">
+    <EntitySetMapping Name="CategoriaProfissionais">
+      <EntityTypeMapping TypeName="SindromeIrlenModel.CategoriaProfissionais">
+        <MappingFragment StoreEntitySet="CategoriaProfissionais">
+          <ScalarProperty Name="IdCategoriaProfissionais" ColumnName="IdCategoriaProfissionais" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cidade">
+      <EntityTypeMapping TypeName="SindromeIrlenModel.Cidade">
+        <MappingFragment StoreEntitySet="Cidade">
+          <ScalarProperty Name="IdCidade" ColumnName="IdCidade" />
+          <ScalarProperty Name="Cidade1" ColumnName="Cidade" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DepoimentoLeitura">
+      <EntityTypeMapping TypeName="SindromeIrlenModel.DepoimentoLeitura">
+        <MappingFragment StoreEntitySet="DepoimentoLeitura">
+          <ScalarProperty Name="IdDepEscrito" ColumnName="IdDepEscrito" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Idade" ColumnName="Idade" />
+          <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="Historia" ColumnName="Historia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DepoimentoVideo">
+      <EntityTypeMapping TypeName="SindromeIrlenModel.DepoimentoVideo">
+        <MappingFragment StoreEntitySet="DepoimentoVideo">
+          <ScalarProperty Name="IdDepVideo" ColumnName="IdDepVideo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Idade" ColumnName="Idade" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estado">
+      <EntityTypeMapping TypeName="SindromeIrlenModel.Estado">
+        <MappingFragment StoreEntitySet="Estado">
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="Estado1" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fotos">
+      <EntityTypeMapping TypeName="SindromeIrlenModel.Fotos">
+        <MappingFragment StoreEntitySet="Fotos">
+          <ScalarProperty Name="IdFotos" ColumnName="IdFotos" />
+          <ScalarProperty Name="Fotos1" ColumnName="Fotos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profissionais">
+      <EntityTypeMapping TypeName="SindromeIrlenModel.Profissionais">
+        <MappingFragment StoreEntitySet="Profissionais">
+          <ScalarProperty Name="IdProfissionais" ColumnName="IdProfissionais" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuemSomos">
+      <EntityTypeMapping TypeName="SindromeIrlenModel.QuemSomos">
+        <MappingFragment StoreEntitySet="QuemSomos">
+          <ScalarProperty Name="IdQuemSomos" ColumnName="IdQuemSomos" />
+          <ScalarProperty Name="Historia" ColumnName="Historia" />
+          <ScalarProperty Name="Objetivos" ColumnName="Objetivos" />
+          <ScalarProperty Name="Valores" ColumnName="Valores" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoDepoimento">
+      <EntityTypeMapping TypeName="SindromeIrlenModel.TipoDepoimento">
+        <MappingFragment StoreEntitySet="TipoDepoimento">
+          <ScalarProperty Name="IdCategDepoimento" ColumnName="IdCategDepoimento" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

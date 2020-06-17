@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SindromeIrlenModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Adm">
+    <Key>
+      <PropertyRef Name="IdAdm" />
+    </Key>
+    <Property Name="IdAdm" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Senha" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CategoriaProfissionais">
+    <Key>
+      <PropertyRef Name="IdCategoriaProfissionais" />
+    </Key>
+    <Property Name="IdCategoriaProfissionais" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Categoria" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Cidade">
+    <Key>
+      <PropertyRef Name="IdCidade" />
+    </Key>
+    <Property Name="IdCidade" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cidade" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DepoimentoLeitura">
+    <Key>
+      <PropertyRef Name="IdDepEscrito" />
+    </Key>
+    <Property Name="IdDepEscrito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Tipo" Type="int" Nullable="false" />
+    <Property Name="Idade" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="Cidade" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Historia" Type="varchar" MaxLength="4000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DepoimentoVideo">
+    <Key>
+      <PropertyRef Name="IdDepVideo" />
+    </Key>
+    <Property Name="IdDepVideo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Tipo" Type="int" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Video" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Estado" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Fotos">
+    <Key>
+      <PropertyRef Name="IdFoto" />
+    </Key>
+    <Property Name="IdFoto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Foto" Type="varchar(max)" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Cidade" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Parceiros">
+    <Key>
+      <PropertyRef Name="IdParceiro" />
+    </Key>
+    <Property Name="IdParceiro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Parceiros" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Logo" Type="varchar(max)" Nullable="false" />
+    <Property Name="Mensagem" Type="varchar" MaxLength="4000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Profissionais">
+    <Key>
+      <PropertyRef Name="IdProfissionais" />
+    </Key>
+    <Property Name="IdProfissionais" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nchar" MaxLength="500" Nullable="false" />
+    <Property Name="Categoria" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+    <Property Name="Cidade" Type="int" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="4000" Nullable="false" />
+    <Property Name="Video" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuemSomos">
+    <Key>
+      <PropertyRef Name="IdQuemSomos" />
+    </Key>
+    <Property Name="IdQuemSomos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Historia" Type="varchar" MaxLength="4000" Nullable="false" />
+    <Property Name="Objetivos" Type="varchar" MaxLength="4000" Nullable="false" />
+    <Property Name="Valores" Type="varchar" MaxLength="4000" Nullable="false" />
+    <Property Name="Foto" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Screnner">
+    <Key>
+      <PropertyRef Name="IdScrenner" />
+    </Key>
+    <Property Name="IdScrenner" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nchar" MaxLength="200" Nullable="false" />
+    <Property Name="Categoria" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+    <Property Name="Cidade" Type="int" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Video" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoDepoimento">
+    <Key>
+      <PropertyRef Name="IdCategDepoimento" />
+    </Key>
+    <Property Name="IdCategDepoimento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Create-at" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Cidade_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="Cidade">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepoimentoLeitura_Cidade">
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="1" />
+    <End Role="DepoimentoLeitura" Type="Self.DepoimentoLeitura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cidade">
+        <PropertyRef Name="IdCidade" />
+      </Principal>
+      <Dependent Role="DepoimentoLeitura">
+        <PropertyRef Name="Cidade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepoimentoLeitura_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="DepoimentoLeitura" Type="Self.DepoimentoLeitura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="DepoimentoLeitura">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepoimentoLeitura_TipoDepoimento">
+    <End Role="TipoDepoimento" Type="Self.TipoDepoimento" Multiplicity="1" />
+    <End Role="DepoimentoLeitura" Type="Self.DepoimentoLeitura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDepoimento">
+        <PropertyRef Name="IdCategDepoimento" />
+      </Principal>
+      <Dependent Role="DepoimentoLeitura">
+        <PropertyRef Name="Tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DepoimentoVideo_TipoDepoimento">
+    <End Role="TipoDepoimento" Type="Self.TipoDepoimento" Multiplicity="1" />
+    <End Role="DepoimentoVideo" Type="Self.DepoimentoVideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDepoimento">
+        <PropertyRef Name="IdCategDepoimento" />
+      </Principal>
+      <Dependent Role="DepoimentoVideo">
+        <PropertyRef Name="Tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fotos_Cidade">
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="1" />
+    <End Role="Fotos" Type="Self.Fotos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cidade">
+        <PropertyRef Name="IdCidade" />
+      </Principal>
+      <Dependent Role="Fotos">
+        <PropertyRef Name="Cidade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fotos_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Fotos" Type="Self.Fotos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="Fotos">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Profissionais_CategoriaProfissionais">
+    <End Role="CategoriaProfissionais" Type="Self.CategoriaProfissionais" Multiplicity="1" />
+    <End Role="Profissionais" Type="Self.Profissionais" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoriaProfissionais">
+        <PropertyRef Name="IdCategoriaProfissionais" />
+      </Principal>
+      <Dependent Role="Profissionais">
+        <PropertyRef Name="Categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Profissionais_Cidade">
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="1" />
+    <End Role="Profissionais" Type="Self.Profissionais" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cidade">
+        <PropertyRef Name="IdCidade" />
+      </Principal>
+      <Dependent Role="Profissionais">
+        <PropertyRef Name="Cidade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Profissionais_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Profissionais" Type="Self.Profissionais" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="Profissionais">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Screnner_CategoriaProfissionais">
+    <End Role="CategoriaProfissionais" Type="Self.CategoriaProfissionais" Multiplicity="1" />
+    <End Role="Screnner" Type="Self.Screnner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoriaProfissionais">
+        <PropertyRef Name="IdCategoriaProfissionais" />
+      </Principal>
+      <Dependent Role="Screnner">
+        <PropertyRef Name="Categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Screnner_Cidade">
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="1" />
+    <End Role="Screnner" Type="Self.Screnner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cidade">
+        <PropertyRef Name="IdCidade" />
+      </Principal>
+      <Dependent Role="Screnner">
+        <PropertyRef Name="Cidade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Screnner_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Screnner" Type="Self.Screnner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="Screnner">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SindromeIrlenModelStoreContainer">
+    <EntitySet Name="Adm" EntityType="Self.Adm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CategoriaProfissionais" EntityType="Self.CategoriaProfissionais" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cidade" EntityType="Self.Cidade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DepoimentoLeitura" EntityType="Self.DepoimentoLeitura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DepoimentoVideo" EntityType="Self.DepoimentoVideo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fotos" EntityType="Self.Fotos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parceiros" EntityType="Self.Parceiros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profissionais" EntityType="Self.Profissionais" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuemSomos" EntityType="Self.QuemSomos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Screnner" EntityType="Self.Screnner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoDepoimento" EntityType="Self.TipoDepoimento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Cidade_Estado" Association="Self.FK_Cidade_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Cidade" EntitySet="Cidade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepoimentoLeitura_Cidade" Association="Self.FK_DepoimentoLeitura_Cidade">
+      <End Role="Cidade" EntitySet="Cidade" />
+      <End Role="DepoimentoLeitura" EntitySet="DepoimentoLeitura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepoimentoLeitura_Estado" Association="Self.FK_DepoimentoLeitura_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="DepoimentoLeitura" EntitySet="DepoimentoLeitura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepoimentoLeitura_TipoDepoimento" Association="Self.FK_DepoimentoLeitura_TipoDepoimento">
+      <End Role="TipoDepoimento" EntitySet="TipoDepoimento" />
+      <End Role="DepoimentoLeitura" EntitySet="DepoimentoLeitura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DepoimentoVideo_TipoDepoimento" Association="Self.FK_DepoimentoVideo_TipoDepoimento">
+      <End Role="TipoDepoimento" EntitySet="TipoDepoimento" />
+      <End Role="DepoimentoVideo" EntitySet="DepoimentoVideo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fotos_Cidade" Association="Self.FK_Fotos_Cidade">
+      <End Role="Cidade" EntitySet="Cidade" />
+      <End Role="Fotos" EntitySet="Fotos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fotos_Estado" Association="Self.FK_Fotos_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Fotos" EntitySet="Fotos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Profissionais_CategoriaProfissionais" Association="Self.FK_Profissionais_CategoriaProfissionais">
+      <End Role="CategoriaProfissionais" EntitySet="CategoriaProfissionais" />
+      <End Role="Profissionais" EntitySet="Profissionais" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Profissionais_Cidade" Association="Self.FK_Profissionais_Cidade">
+      <End Role="Cidade" EntitySet="Cidade" />
+      <End Role="Profissionais" EntitySet="Profissionais" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Profissionais_Estado" Association="Self.FK_Profissionais_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Profissionais" EntitySet="Profissionais" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Screnner_CategoriaProfissionais" Association="Self.FK_Screnner_CategoriaProfissionais">
+      <End Role="CategoriaProfissionais" EntitySet="CategoriaProfissionais" />
+      <End Role="Screnner" EntitySet="Screnner" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Screnner_Cidade" Association="Self.FK_Screnner_Cidade">
+      <End Role="Cidade" EntitySet="Cidade" />
+      <End Role="Screnner" EntitySet="Screnner" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Screnner_Estado" Association="Self.FK_Screnner_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Screnner" EntitySet="Screnner" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
